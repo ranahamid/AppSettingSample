@@ -23,6 +23,7 @@ builder.Host.ConfigureAppConfiguration((hostingContext, config) =>
     var env = hostingContext.HostingEnvironment;
     builder.Configuration.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
     builder.Configuration.AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true, reloadOnChange: true);
+    builder.Configuration.AddJsonFile("customJson.json", optional: true, reloadOnChange: true);
     if (env.IsDevelopment())
     {
         builder.Configuration.AddUserSecrets<Program>();
