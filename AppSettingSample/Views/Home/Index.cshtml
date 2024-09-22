@@ -1,0 +1,17 @@
+﻿@inject Microsoft.Extensions.Configuration.IConfiguration _configuration
+@inject Microsoft.Extensions.Options.IOptions<TwilioSettings> _twilioOptions
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@_configuration.GetSection("Twilio:phone").Value
+ 
+@_twilioOptions.Value.id
+
+@_twilioOptions.Value.phone
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
